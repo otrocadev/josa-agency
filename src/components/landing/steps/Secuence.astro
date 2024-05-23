@@ -1,0 +1,19 @@
+---
+const { secuenceData } = Astro.props;
+
+import SecuenceCard from "./SecuenceCard.astro";
+---
+
+<ol
+  class="m-auto border-s-4 border-dashed border-josa-dark dark:border-josa-green"
+>
+  {
+    secuenceData.steps.map((step, index) => (
+      <SecuenceCard
+        cardTitle={step.name}
+        cardDescription={step.description}
+        number={index}
+      />
+    ))
+  }
+</ol>

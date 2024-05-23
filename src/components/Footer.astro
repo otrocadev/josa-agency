@@ -1,0 +1,21 @@
+---
+import * as content from "../content/main-page.md";
+import Icon from "./Icon.astro";
+
+const social = content.frontmatter.social;
+---
+
+<footer class="flex justify-between align-middle items-center p-8">
+  <span>
+    2024 Josa | Agència de communicació. Tots els drets reservats ©
+  </span>
+  <span class="flex">
+    {
+      social.map((item) => (
+        <a href={item.url} target="_blank" rel="noopener noreferrer">
+          <Icon name={item.icon} />
+        </a>
+      ))
+    }
+  </span>
+</footer>

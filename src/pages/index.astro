@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import CustomSection from "../components/landing/CustomSection.astro";
+import ServiceCard from "../components/landing/services/ServiceCard.astro";
+import Secuence from "../components/landing/steps/Secuence.astro";
+import * as mainPage from "../content/main-page.md";
+import JosaLogo from "../components/JosaLogo.astro";
+import MemberPresentation from "../components/landing/team/MemberPresentation.astro";
+import Footer from "../components/Footer.astro";
+
+const cover = mainPage.frontmatter.cover;
+const services = mainPage.frontmatter.services;
+const workingSecuence = mainPage.frontmatter.secuence;
+const teamMembers = mainPage.frontmatter.team;
+---
+
+<Layout title="JOSA - Agència de comunicació">
+  <main
+    class="sm:overflow-y-scroll sm:overflow-x-hidden sm:snap-y sm:snap-mandatory sm:relative sm:w-full sm:h-screen"
+  >
+    <CustomSection type="mainTitle">
+      <JosaLogo />
+      <footer
+        class="flex flex-col text-center my-auto sm:mb-auto sm:mt-4 justify-start"
+      >
+        <p class="font-bold text-xl px-8">
+          {cover.description}
+        </p>
+      </footer>
+    </CustomSection>
+
+    <CustomSection type="gradient">
+      <h2
+        class="text-5xl font-bold text-center text-josa-dark dark:text-josa-light py-20"
+      >
+        {services.title}
+      </h2>
+      <div class="flex w-full xl:h-1/2 justify-center gap-12 flex-wrap p-8">
+        {
+          services.serviceList.map((item) => (
+            <ServiceCard
+              name={item.name}
+              description={item.description}
+              buttonText={item.buttonText}
+              icon={item.icon}
+            />
+          ))
+        }
+      </div>
+    </CustomSection>
+
+    <CustomSection>
+      <Secuence secuenceData={workingSecuence} />
+    </CustomSection>
+
+    <CustomSection type="gradient">
+      <h2
+        class="text-5xl font-bold text-center text-josa-dark dark:text-josa-light py-20"
+      >
+        {teamMembers.title}
+      </h2>
+      <div
+        class="flex flex-col gap-4 p-8 w-fit sm:flex-row sm:w-screen sm:items-center sm:align-middle m-auto"
+      >
+        {
+          teamMembers.members.map((member) => (
+            <MemberPresentation memberData={member} />
+          ))
+        }
+      </div>
+    </CustomSection>
+
+    <Footer />
+  </main>
+</Layout>

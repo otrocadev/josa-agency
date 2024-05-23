@@ -1,0 +1,91 @@
+---
+import Icon from "../../Icon.astro";
+
+const { memberData } = Astro.props;
+---
+
+<article class="group h-fit sm:h-144 sm:w-96 sm:[perspective:1000px] m-auto">
+  <div
+    class="bg-josa-light dark:bg-josa-dark relative h-full w-full rounded-xl transition-all duration-1000 [transform-style:preserve-3d] sm:group-hover:[transform:rotateY(180deg)]"
+  >
+    <div class="sm:absolute flex flex-col inset-0 p-4">
+      <img
+        src=`/img/${memberData.arroba}.avif`
+        alt=""
+        class="avatar h-96 w-fit mx-auto"
+      />
+      <h3 class="text-3xl font-extrabold text-josa-green mt-12">
+        {memberData.name}
+      </h3>
+      <h4 class="text-xl">@{memberData.arroba}</h4>
+      <h4 class="text-2xl font-semibold">{memberData.position}</h4>
+      <div class="sm:hidden">
+        <blockquote>
+          <p class="text-lg text-center pt-4 italic font-thin">
+            {memberData.description}
+          </p>
+        </blockquote>
+        <div class="flex py-4 [&>*]:w-12 [&>*]:h-12">
+          {
+            memberData.social.map((network) => (
+              <a
+                class="hover:scale-110 transition-opacity duration-500"
+                href={network.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name={network.icon} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-josa-light dark:bg-josa-dark absolute inset-0 h-full w-full rounded-xl px-12 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]"
+    >
+      <div
+        class="hidden sm:flex min-h-full flex-col items-center justify-center"
+      >
+        <blockquote>
+          <svg
+            class="icon icon-tabler icon-tabler-quote"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"
+            ></path>
+            <path
+              d="M19 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"
+            ></path>
+          </svg>
+          <p class="text-lg italic">
+            {memberData.description}
+          </p>
+        </blockquote>
+        <div class="flex py-4 [&>*]:w-12 [&>*]:h-12">
+          {
+            memberData.social.map((network) => (
+              <a
+                class="hover:scale-125 transition-opacity duration-500"
+                href={network.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name={network.icon} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

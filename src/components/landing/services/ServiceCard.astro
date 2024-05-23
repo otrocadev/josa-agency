@@ -1,0 +1,44 @@
+---
+import Icon from "../../Icon.astro";
+
+const {
+  name,
+  description,
+  icon,
+  buttonText = "Saber més",
+  url = "#",
+} = Astro.props;
+---
+
+<article
+  class="flex flex-col w-96 xl:w-1/4 bg-josa-light border-4 border-josa-light
+  p-8 rounded-xl gap-4 shadow-xl dark:bg-josa-dark dark:border-josa-dark
+  hover:scale-105 transition-transform duration-500 ease-in-out"
+>
+  <span class="w-16">
+    <Icon name={icon} />
+  </span>
+  <div class="flex flex-col gap-2 h-full">
+    <h3 class="text-3xl text-josa-green">
+      <strong>
+        {name}
+      </strong>
+    </h3>
+    <p>{description}</p>
+  </div>
+  {
+    /*
+  
+  <button
+    class="self-end justify-self-end
+      border-josa-green text-josa-light bg-josa-green
+      border-2 rounded-xl w-fit px-8 py-2 transition-colors duration-300
+      hover:bg-opacity-0 hover:text-josa-green dark:hover:text-josa-light"
+  >
+    <a href={url}>
+      {buttonText}
+    </a>
+  </button>
+  */
+  }
+</article>
