@@ -5,9 +5,9 @@ import CustomSection from "../components/landing/CustomSection.astro";
 import ServiceCard from "../components/landing/services/ServiceCard.astro";
 import Secuence from "../components/landing/steps/Secuence.astro";
 import * as mainPage from "../content/mainContent/main-page.md";
-import JosaLogo from "../components/JosaLogo.astro";
 import MemberPresentation from "../components/landing/team/MemberPresentation.astro";
 import Footer from "../components/Footer.astro";
+import JosaLogo from "../components/JosaLogo.astro";
 
 const cover = mainPage.frontmatter.cover;
 const services = mainPage.frontmatter.services;
@@ -36,7 +36,7 @@ const teamMembers = mainPage.frontmatter.team;
       >
         {services.title}
       </h2>
-      <div class="flex w-full xl:h-1/2 justify-center gap-12 flex-wrap p-8">
+      <div class="flex w-full xl:h-1/2 justify-center gap-20 flex-wrap p-8">
         {
           services.serviceList.map((item) => (
             <ServiceCard
@@ -50,7 +50,7 @@ const teamMembers = mainPage.frontmatter.team;
       </div>
     </CustomSection>
 
-    <CustomSection>
+    <CustomSection type="map">
       <Secuence secuenceData={workingSecuence} />
     </CustomSection>
 
@@ -61,7 +61,7 @@ const teamMembers = mainPage.frontmatter.team;
         {teamMembers.title}
       </h2>
       <div
-        class="flex flex-col gap-4 p-8 w-fit sm:flex-row sm:w-screen sm:items-center sm:align-middle m-auto"
+        class="flex flex-col gap-16 p-8 w-fit xl:flex-row xl:w-screen xl:items-center xl:align-middle m-auto"
       >
         {
           teamMembers.members.map((member) => (
@@ -70,7 +70,6 @@ const teamMembers = mainPage.frontmatter.team;
         }
       </div>
     </CustomSection>
-
     <Footer />
   </main>
 </Layout>

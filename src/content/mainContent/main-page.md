@@ -3,11 +3,11 @@ cover: { description: "ON LA CREATIVITAT TROBA CASA ALS PIRINEUS" }
 
 services:
   {
-    title: "Que oferim?",
+    title: "Què oferim?",
     serviceList:
       [
         {
-          name: "Estrategia comunicativa",
+          name: "Estratègia comunicativa",
           description: "Fem que la teva marca no passi desapercebuda. Fes-te veure!",
           icon: "chess",
         },
@@ -86,8 +86,8 @@ team:
         {
           name: "Ot Roca Tanya",
           arroba: "otrocadev",
-          position: "Director de Tecnología",
-          description: "Com a encarregat de la part tecnològica, lidero la visió i l'estratègia digital de Josa. Gràcies a la experiencia adquirida en la meva trajectoria professional optimitzo els recursos tecnològics per garantir que oferim solucions innovadores i eficients que s'adapten a les teves necesitats",
+          position: "Director de Tecnologia",
+          description: "Com a encarregat de la part tecnològica, lidero la visió i l'estratègia digital de Josa. Gràcies a la experiència adquirida en la meva trajectòria professional optimitzo els recursos tecnològics per garantir que oferim solucions innovadores i eficients que s'adapten a les teves necessitats",
           social:
             [
               { icon: "linkedin", url: "https://linkedin.com/in/otrocadev/" },
@@ -97,6 +97,4 @@ team:
         },
       ],
   }
-
-social: []
 ---

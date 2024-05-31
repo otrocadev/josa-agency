@@ -4,28 +4,30 @@ import Icon from "../../Icon.astro";
 const { memberData } = Astro.props;
 ---
 
-<article class="group h-fit sm:h-144 sm:w-96 sm:[perspective:1000px] m-auto">
+<article
+  class="group h-fit w-fit xl:h-144 xl:w-96 xl:[perspective:1000px] m-auto"
+>
   <div
-    class="bg-josa-light dark:bg-josa-dark relative h-full w-full rounded-xl transition-all duration-1000 [transform-style:preserve-3d] sm:group-hover:[transform:rotateY(180deg)]"
+    class="bg-josa-light dark:bg-josa-dark relative h-full w-full rounded-xl transition-all duration-1000 [transform-style:preserve-3d] xl:group-hover:[transform:rotateY(180deg)]"
   >
-    <div class="sm:absolute flex flex-col inset-0 p-4">
+    <div class="xl:absolute flex flex-col inset-0 p-8">
       <img
         src=`/img/${memberData.arroba}.avif`
         alt=""
-        class="avatar h-96 w-fit mx-auto"
+        class="avatar h-96 w-auto mx-auto"
       />
       <h3 class="text-3xl font-extrabold text-josa-green mt-12">
         {memberData.name}
       </h3>
       <h4 class="text-xl">@{memberData.arroba}</h4>
       <h4 class="text-2xl font-semibold">{memberData.position}</h4>
-      <div class="sm:hidden">
+      <div class="xl:hidden">
         <blockquote>
           <p class="text-lg text-center pt-4 italic font-thin">
             {memberData.description}
           </p>
         </blockquote>
-        <div class="flex py-4 [&>*]:w-12 [&>*]:h-12">
+        <div class="flex justify-center py-4 [&>*]:w-12 [&>*]:h-12">
           {
             memberData.social.map((network) => (
               <a
@@ -45,7 +47,7 @@ const { memberData } = Astro.props;
       class="bg-josa-light dark:bg-josa-dark absolute inset-0 h-full w-full rounded-xl px-12 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]"
     >
       <div
-        class="hidden sm:flex min-h-full flex-col items-center justify-center"
+        class="hidden xl:flex min-h-full flex-col items-center justify-center"
       >
         <blockquote>
           <svg

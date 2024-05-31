@@ -1,21 +1,24 @@
 ---
-import * as content from "../content/mainContent/main-page.md";
+import * as content from "../content/social.md";
 import Icon from "./Icon.astro";
 
 const social = content.frontmatter.social;
 ---
 
-<footer class="flex justify-between align-middle items-center p-8">
-  <span>
-    2024 Josa | Agència de communicació. Tots els drets reservats ©
-  </span>
-  <span class="flex">
-    {
-      social.map((item) => (
-        <a href={item.url} target="_blank" rel="noopener noreferrer">
-          <Icon name={item.icon} />
-        </a>
-      ))
-    }
-  </span>
+<footer class="flex flex-col snap-end justify-between p-8 gap-4 m-4">
+  <span>georgina@josa.cat</span>
+  <div class="flex w-full justify-between align-middle items-center gap-4">
+    <span>
+      2024 Josa | Agència de comunicació. Tots els drets reservats ©
+    </span>
+    <span class="flex">
+      {
+        social.map((item) => (
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <Icon name={item.icon} />
+          </a>
+        ))
+      }
+    </span>
+  </div>
 </footer>
