@@ -1,0 +1,57 @@
+---
+const { frontmatter } = Astro.props;
+
+import Footer from "../components/Footer.astro";
+import JosaLogoHeader from "../components/JosaLogoHeader.astro";
+---
+
+<!doctype html>
+<html
+  lang="ca"
+  class="bg-josa-cream dark:bg-josa-dark text-josa-dark dark:text-josa-light"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={frontmatter.metadescription} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href=`https://josa.cat/blog/${frontmatter.slug}` />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+
+  <body class="font-josa">
+    <header
+      class="bg-josa-green h-fit flex py-2 px-8 shadow-sm shadow-josa-dark-green"
+    >
+      <JosaLogoHeader />
+    </header>
+    <main class="p-12 xl:px-32">
+      <h1 class="text-5xl text-josa-green font-semibold">
+        {frontmatter.title}
+      </h1>
+      <h2>{frontmatter.subtitle}</h2>
+      <slot />
+    </main>
+    <Footer bg="green" />
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/Montserrat.ttf");
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+</style>
