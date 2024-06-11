@@ -26,7 +26,7 @@ services:
 
 secuence:
   {
-    title: "JOSA",
+    title: "Així és com treballem",
     steps:
       [
         {

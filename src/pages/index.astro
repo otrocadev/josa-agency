@@ -17,7 +17,7 @@ const teamMembers = mainPage.frontmatter.team;
 
 <Layout title="JOSA - Agència de comunicació">
   <main
-    class="sm:overflow-y-scroll sm:overflow-x-hidden sm:snap-y sm:snap-mandatory sm:relative sm:w-full sm:h-screen"
+    class="lg:overflow-y-scroll lg:overflow-x-hidden lg:snap-y lg:snap-proximity lg:relative lg:w-full lg:h-screen"
   >
     <CustomSection type="mainTitle">
       <JosaLogo />
@@ -51,6 +51,11 @@ const teamMembers = mainPage.frontmatter.team;
     </CustomSection>
 
     <CustomSection type="map">
+      <h2
+        class="text-5xl font-bold text-center text-josa-dark dark:text-josa-light pb-8"
+      >
+        {workingSecuence.title}
+      </h2>
       <Secuence secuenceData={workingSecuence} />
     </CustomSection>
 
