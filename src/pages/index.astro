@@ -8,6 +8,7 @@ import * as mainPage from "../content/mainContent/main-page.md";
 import MemberPresentation from "../components/landing/team/MemberPresentation.astro";
 import Footer from "../components/Footer.astro";
 import JosaLogo from "../components/JosaLogo.astro";
+import Icon from "../components/Icon.astro";
 
 const cover = mainPage.frontmatter.cover;
 const services = mainPage.frontmatter.services;
@@ -20,14 +21,19 @@ const teamMembers = mainPage.frontmatter.team;
     class="lg:overflow-y-scroll lg:overflow-x-hidden lg:relative lg:w-full lg:h-screen"
   >
     <CustomSection type="mainTitle">
-      <JosaLogo />
-      <footer
-        class="flex flex-col text-center my-auto sm:mb-auto sm:mt-4 justify-start"
-      >
-        <p class="font-bold text-xl px-8">
-          {cover.description}
-        </p>
-      </footer>
+      <div class="flex flex-col m-auto">
+        <JosaLogo />
+        <main
+          class="flex flex-col text-center my-auto sm:mb-auto sm:mt-4 justify-start"
+        >
+          <p class="font-bold text-xl px-8">
+            {cover.description}
+          </p>
+        </main>
+      </div>
+      <div class="mx-auto mb-8 animate-bounce">
+        <Icon name="chevronsDown" />
+      </div>
     </CustomSection>
 
     <CustomSection type="gradient">
