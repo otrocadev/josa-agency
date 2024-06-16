@@ -5,11 +5,11 @@ import Icon from "./Icon.astro";
 const { bg = "" } = Astro.props;
 const social = content.frontmatter.social;
 
-let footerClass = "flex flex-col snap-end justify-between p-8 gap-4";
+let footerClass = "flex flex-col justify-between p-8 gap-4";
 
 if (bg === "green") {
   footerClass =
-    "flex flex-col snap-end justify-between p-8 gap-4 bg-josa-green text-josa-light";
+    "flex flex-col justify-between p-8 gap-4 bg-josa-green text-josa-light";
 }
 ---
 
