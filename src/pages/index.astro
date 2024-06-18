@@ -1,25 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro'
 
-import CustomSection from "../components/landing/CustomSection.astro";
-import ServiceCard from "../components/landing/services/ServiceCard.astro";
-import Secuence from "../components/landing/steps/Secuence.astro";
-import * as mainPage from "../content/mainContent/main-page.md";
-import MemberPresentation from "../components/landing/team/MemberPresentation.astro";
-import Footer from "../components/Footer.astro";
-import JosaLogo from "../components/JosaLogo.astro";
-import Icon from "../components/Icon.astro";
+import CustomSection from '../components/landing/CustomSection.astro'
+import ServiceCard from '../components/landing/services/ServiceCard.astro'
+import Secuence from '../components/landing/steps/Secuence.astro'
+import * as mainPage from '../content/mainContent/main-page.md'
+import MemberPresentation from '../components/landing/team/MemberPresentation.astro'
+import Footer from '../components/Footer.astro'
+import JosaLogo from '../components/JosaLogo.astro'
+import Icon from '../components/Icon.astro'
+import HeaderMenu from '../components/header/HeaderMenu.astro'
 
-const cover = mainPage.frontmatter.cover;
-const services = mainPage.frontmatter.services;
-const workingSecuence = mainPage.frontmatter.secuence;
-const teamMembers = mainPage.frontmatter.team;
+const cover = mainPage.frontmatter.cover
+const services = mainPage.frontmatter.services
+const workingSecuence = mainPage.frontmatter.secuence
+const teamMembers = mainPage.frontmatter.team
 ---
 
 <Layout title="JOSA - Agència de comunicació">
-  <main
-    class="lg:overflow-y-scroll lg:overflow-x-hidden lg:relative lg:w-full lg:h-screen"
-  >
+  <main>
     <CustomSection type="mainTitle">
       <div class="flex flex-col m-auto">
         <JosaLogo />
@@ -36,7 +35,7 @@ const teamMembers = mainPage.frontmatter.team;
       </div>
     </CustomSection>
 
-    <CustomSection type="gradient">
+    <CustomSection id="services" type="gradient">
       <h2
         class="text-5xl font-bold text-center text-josa-dark dark:text-josa-light py-20"
       >
@@ -56,7 +55,7 @@ const teamMembers = mainPage.frontmatter.team;
       </div>
     </CustomSection>
 
-    <CustomSection type="map">
+    <CustomSection id="procedure" type="map">
       <h2
         class="text-5xl font-bold text-center text-josa-dark dark:text-josa-light pb-8"
       >
@@ -65,7 +64,7 @@ const teamMembers = mainPage.frontmatter.team;
       <Secuence secuenceData={workingSecuence} />
     </CustomSection>
 
-    <CustomSection type="gradient">
+    <CustomSection id="team" type="gradient">
       <h2
         class="text-5xl font-bold text-center text-josa-dark dark:text-josa-light py-20"
       >

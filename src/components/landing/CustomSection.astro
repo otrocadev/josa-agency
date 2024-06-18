@@ -1,25 +1,25 @@
 ---
-const { type } = Astro.props;
+const { id, type } = Astro.props
 
 let customClass =
-  "w-screen h-fit py-24 sm:min-h-screen flex flex-col relative overflow-hidden";
+  'w-screen h-fit py-24 sm:min-h-screen flex flex-col relative overflow-hidden'
 
-if (type === "mainTitle") {
+if (type === 'mainTitle') {
   customClass =
-    "w-screen h-screen flex flex-col relative overflow-hidden bg-josa-green text-josa-light";
+    'w-screen h-screen flex flex-col relative overflow-hidden bg-josa-green text-josa-light'
 }
 
-if (type === "gradient") {
+if (type === 'gradient') {
   customClass =
-    "w-screen min-h-screen h-fit pb-8 xl:min-h-screen flex flex-col justify-center relative overflow-hidden bg-gradient-to-tl from-josa-cream to-josa-light-green dark:bg-gradient-to-br dark:from-josa-dark-green dark:from-20% dark:via-josa-green dark:via-80% dark:to-josa-light-brown";
+    'w-screen min-h-screen h-fit pb-8 xl:min-h-screen flex flex-col justify-center relative overflow-hidden bg-gradient-to-tl from-josa-cream to-josa-light-green dark:bg-gradient-to-br dark:from-josa-dark-green dark:from-20% dark:via-josa-green dark:via-80% dark:to-josa-light-brown'
 }
 
-if (type === "map") {
+if (type === 'map') {
   customClass =
-    "w-screen py-24 sm:min-h-screen flex flex-col relative overflow-hidden bg-[url('/bgPatterns/topography.svg')]";
+    "w-screen py-24 sm:min-h-screen flex flex-col relative overflow-hidden bg-[url('/bgPatterns/topography.svg')]"
 }
 ---
 
-<section class={`${customClass}`}>
+<section id={id} class={`${customClass}`}>
   <slot />
 </section>

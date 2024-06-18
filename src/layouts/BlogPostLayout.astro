@@ -1,8 +1,8 @@
 ---
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 
-import Footer from "../components/Footer.astro";
-import JosaLogoHeader from "../components/JosaLogoHeader.astro";
+import Footer from '../components/Footer.astro'
+import JosaLogoHeader from '../components/JosaLogoHeader.astro'
 ---
 
 <!doctype html>
@@ -33,18 +33,18 @@ import JosaLogoHeader from "../components/JosaLogoHeader.astro";
       <h2>{frontmatter.subtitle}</h2>
       <slot />
     </main>
-    <Footer bg="green" />
+    <Footer />
   </body>
 </html>
 
 <style is:global>
   @font-face {
-    font-family: "Montserrat";
-    src: url("/Montserrat.ttf");
+    font-family: 'Montserrat';
+    src: url('/Montserrat.ttf');
   }
 
   html {
-    cursor: url("/cursor.svg"), auto;
+    cursor: url('/cursor.svg'), auto;
   }
 
   h2 {

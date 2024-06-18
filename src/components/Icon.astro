@@ -1,28 +1,31 @@
 ---
-const { name } = Astro.props;
+const { name } = Astro.props
 
-import Chess from "./icons/Chess.astro";
-import Desktop from "./icons/Desktop.astro";
-import Palette from "./icons/Palette.astro";
-import ChevronsDown from "./icons/ChevronsDown.astro";
-
-import Linkedin from "./icons/Linkedin.astro";
-import Twitter from "./icons/Twitter.astro";
-import Instagram from "./icons/Instagram.astro";
-import Github from "./icons/Github.astro";
+import Chess from './icons/Chess.astro'
+import ChevronsDown from './icons/ChevronsDown.astro'
+import Desktop from './icons/Desktop.astro'
+import Github from './icons/Github.astro'
+import Instagram from './icons/Instagram.astro'
+import Josa from './icons/Josa.astro'
+import Linkedin from './icons/Linkedin.astro'
+import Menu from './icons/Menu.astro'
+import Palette from './icons/Palette.astro'
+import Twitter from './icons/Twitter.astro'
 
 const iconMap = {
   chess: Chess,
-  desktop: Desktop,
-  palette: Palette,
   chevronsDown: ChevronsDown,
-  linkedin: Linkedin,
-  twitter: Twitter,
+  desktop: Desktop,
   github: Github,
   instagram: Instagram,
-};
+  josa: Josa,
+  linkedin: Linkedin,
+  menu: Menu,
+  palette: Palette,
+  twitter: Twitter,
+}
 
-const IconComponent = iconMap[name];
+const IconComponent = iconMap[name]
 ---
 
 <IconComponent />
