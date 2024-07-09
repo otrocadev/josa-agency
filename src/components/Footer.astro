@@ -1,19 +1,12 @@
 ---
-import * as content from "../content/social.md";
-import Icon from "./Icon.astro";
-
-const { bg = "" } = Astro.props;
-const social = content.frontmatter.social;
-
-let footerClass = "flex flex-col justify-between p-8 gap-4";
-
-if (bg === "green") {
-  footerClass =
-    "flex flex-col justify-between p-8 gap-4 bg-josa-green text-josa-light";
-}
+import * as content from '../content/general/social.md'
+import Icon from './Icon.astro'
+const social = content.frontmatter.social
 ---
 
-<footer class={footerClass}>
+<footer
+  class="flex flex-col justify-between p-8 gap-4 bg-josa-green drop-shadow-lg text-josa-light"
+>
   <span>georgina@josa.cat</span>
   <div class="flex w-full justify-between align-middle items-center gap-4">
     <span>

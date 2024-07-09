@@ -1,0 +1,11 @@
+---
+import Icon from '../Icon.astro'
+import HeaderMenuDesktop from './HeaderMenuDesktop.astro'
+import HeaderMenuJSX from './HeaderMenu.jsx'
+---
+
+<HeaderMenuJSX client:only="react">
+  <Icon name="josa" slot="logo" />
+  <Icon name="menu" slot="menu" />
+  <HeaderMenuDesktop slot="menuDesktop" />
+</HeaderMenuJSX>
