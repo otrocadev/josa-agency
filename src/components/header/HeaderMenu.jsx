@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import HeaderMenuMobile from './HeaderMenuMobile.jsx'
 
 export default function HeaderMenuJSX(props) {
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= 640 ? true : false
   )
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const handleMenuOpening = () => {
     setIsMenuOpen(!isMenuOpen)
   }
@@ -17,13 +16,10 @@ export default function HeaderMenuJSX(props) {
         <a href="/" className="h-full">
           {props.logo}
         </a>
-
         {
           // Check if it is mobile to show the desktop menu or the menu button
           isMobile ? (
-            <button onClick={handleMenuOpening} className="">
-              {props.menu}
-            </button>
+            <button onClick={handleMenuOpening}>{props.menu}</button>
           ) : (
             <>{props.menuDesktop}</>
           )
@@ -31,8 +27,43 @@ export default function HeaderMenuJSX(props) {
       </header>
 
       {
-        // If it is mobile checks if it is open to show the mobile Rendering
-        isMenuOpen ? <HeaderMenuMobile /> : <></>
+        // If it is mobile checks if it is open to render the mobile menu
+        isMenuOpen ? (
+          <div className="fixed z-20 w-full h-full mt-16 sm:flex justify-center items-center backdrop-blur-lg">
+            <nav className="font-semibold flex flex-col gap-8 text-xl p-12">
+              <a
+                onClick={handleMenuOpening}
+                className="hover:scale-110"
+                href="#services"
+              >
+                Serveis
+              </a>
+              <a
+                onClick={handleMenuOpening}
+                className="hover:scale-110"
+                href="#procedure"
+              >
+                Procediment
+              </a>
+              <a
+                onClick={handleMenuOpening}
+                className="hover:scale-110"
+                href="#team"
+              >
+                Equip
+              </a>
+              <a
+                onClick={handleMenuOpening}
+                className="hover:scale-110"
+                href="mailto:georgina@josa.cat"
+              >
+                Contacte
+              </a>
+            </nav>
+          </div>
+        ) : (
+          <></>
+        )
       }
     </>
   )
