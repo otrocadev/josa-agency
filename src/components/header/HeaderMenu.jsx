@@ -12,7 +12,7 @@ export default function HeaderMenuJSX(props) {
 
   return (
     <>
-      <header className="flex justify-between h-16 w-full p-5 fixed z-10 backdrop-blur-lg border-b border-josa-dark-green">
+      <header className="flex text-josa-light justify-between h-16 w-full p-5 fixed z-10 backdrop-blur-lg border-b border-josa-dark-green">
         <a href="/" className="h-full">
           {props.logo}
         </a>
