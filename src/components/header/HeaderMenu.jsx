@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { mainpage } from '../../content/general/globalVariables.json'
+import { mainpage } from '../../globalVariables.json'
 
 export default function HeaderMenuJSX(props) {
   const [isMobile, setIsMobile] = useState(
