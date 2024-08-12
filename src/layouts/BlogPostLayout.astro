@@ -24,15 +24,14 @@ import JosaLogoHeader from '../components/JosaLogoHeader.astro'
 
   <body class="font-josa">
     <header
-      class="bg-josa-green h-fit flex py-2 px-8 shadow-sm shadow-josa-dark-green"
+      class="bg-josa-green h-fit w-screen flex py-2 px-8 shadow-sm shadow-josa-dark-green"
     >
       <JosaLogoHeader />
     </header>
-    <main class="p-12 xl:px-32">
+    <main class="p-12 xl:px-32 text-xl">
       <h1 class="text-5xl text-josa-green font-semibold">
         {frontmatter.title}
       </h1>
-      <h2>{frontmatter.subtitle}</h2>
       <slot />
     </main>
     <Footer />
@@ -46,16 +45,80 @@ import JosaLogoHeader from '../components/JosaLogoHeader.astro'
       cursor: url('/cursor.svg'), auto;
     }
 
-    h2 {
-      font-size: 1.5rem;
-      line-height: 2rem;
+    h1,
+    h2,
+    h3 {
+      color: #5e6e50;
+    }
+
+    h2,
+    h3 {
       font-weight: 600;
-      margin-top: 1rem;
+      margin-top: 3rem;
       margin-bottom: 0.6rem;
     }
 
+    h2 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
     p {
-      margin-top: 1rem;
+      margin-top: 2rem;
+    }
+
+    ul {
+      list-style-type: disc;
+
+      > li {
+        margin-top: 1rem;
+        margin-left: 2rem;
+      }
+    }
+
+    ol {
+      list-style-type: decimal;
+      > li {
+        margin-top: 1rem;
+        margin-left: 2rem;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      background-color: #b4b39c;
+      text-align: left;
+      border-radius: 0.6rem;
+      font-weight: 600;
+      margin: 2rem auto;
+
+      th {
+        background-color: #5e6e50;
+        color: #f4ffff;
+        padding: 0.75rem 2rem;
+      }
+      td {
+        padding: 1rem 2rem;
+      }
+      th:first-child {
+        border-top-left-radius: 0.6rem;
+      }
+      th:last-child {
+        border-top-right-radius: 0.6rem;
+      }
+
+      td:first-child {
+        font-weight: 800;
+      }
+    }
+
+    @media (min-width: 800px) {
+      table {
+        margin: 2rem 4rem;
+      }
     }
   </style>
 </html>

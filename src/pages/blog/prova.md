@@ -1,7 +1,6 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: Prova de post en el blog
-subtitle: Prova
 slug: prova
 metadescription: Lorem ipsum lolololo
 ---
