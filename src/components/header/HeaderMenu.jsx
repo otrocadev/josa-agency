@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { mainpage } from '../../content/general/globalVariables.json'
 
 export default function HeaderMenuJSX(props) {
   const [isMobile, setIsMobile] = useState(
@@ -13,7 +14,7 @@ export default function HeaderMenuJSX(props) {
   return (
     <>
       <header className="flex text-josa-light justify-between h-16 w-full p-5 fixed z-10 backdrop-blur-lg border-b border-josa-dark-green">
-        <a href="/" className="h-full">
+        <a href={mainpage} className="h-full">
           {props.logo}
         </a>
         {
@@ -34,21 +35,21 @@ export default function HeaderMenuJSX(props) {
               <a
                 onClick={handleMenuOpening}
                 className="hover:scale-110"
-                href="#services"
+                href="https://josa.cat/#services"
               >
                 Serveis
               </a>
               <a
                 onClick={handleMenuOpening}
                 className="hover:scale-110"
-                href="#procedure"
+                href="https://josa.cat/#procedure"
               >
                 Procediment
               </a>
               <a
                 onClick={handleMenuOpening}
                 className="hover:scale-110"
-                href="#team"
+                href="https://josa.cat/#team"
               >
                 Equip
               </a>

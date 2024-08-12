@@ -3,7 +3,7 @@ const { frontmatter } = Astro.props
 import { ViewTransitions } from 'astro:transitions'
 
 import Footer from '../components/Footer.astro'
-import JosaLogoHeader from '../components/JosaLogoHeader.astro'
+import HeaderMenu from '../components/header/HeaderMenu.astro'
 ---
 
 <!doctype html>
@@ -23,12 +23,8 @@ import JosaLogoHeader from '../components/JosaLogoHeader.astro'
   </head>
 
   <body class="font-josa">
-    <header
-      class="bg-josa-green h-fit w-screen flex py-2 px-8 shadow-sm shadow-josa-dark-green"
-    >
-      <JosaLogoHeader />
-    </header>
-    <main class="p-12 xl:px-32 text-xl">
+    <HeaderMenu />
+    <main class="p-12 pt-24 xl:px-32 text-xl">
       <h1 class="text-5xl text-josa-green font-semibold">
         {frontmatter.title}
       </h1>
